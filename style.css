@@ -1,0 +1,423 @@
+:root {
+    --primary-blue: #133663; /* Matching the logo dark blue */
+    --light-blue: #4a90e2;   /* Matching the logo 'Edge' blue */
+    --gold: #c59d5f;         /* Matching the logo arrow */
+    --text-dark: #333;
+    --text-light: #666;
+    --bg-light: #f8f9fa;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Inter', sans-serif;
+    color: var(--text-dark);
+    line-height: 1.7;
+    scroll-behavior: smooth;
+}
+
+.container {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* Navbar */
+header {
+    background: #fff;
+    padding: 10px 0;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 1000;
+    box-shadow: 0 2px 15px rgba(0,0,0,0.1);
+}
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.site-logo {
+    height: 60px; /* Adjust based on your logo shape */
+    width: auto;
+}
+
+.nav-links {
+    list-style: none;
+    display: flex;
+    align-items: center;
+}
+
+.nav-links li { margin-left: 25px; }
+
+.nav-links a {
+    text-decoration: none;
+    color: var(--primary-blue);
+    font-weight: 600;
+    transition: 0.3s;
+}
+
+.nav-links a:hover { color: var(--light-blue); }
+
+.btn-cta {
+    background: var(--primary-blue);
+    color: #fff !important;
+    padding: 10px 20px;
+    border-radius: 5px;
+}
+
+/* Hero */
+.hero {
+    height: 100vh;
+    background: url('https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=1350&q=80');
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    align-items: center;
+    position: relative;
+    color: #fff;
+    text-align: center;
+}
+
+.hero-overlay {
+    position: absolute;
+    top: 0; left: 0; width: 100%; height: 100%;
+    background: rgba(19, 54, 99, 0.85); /* Deep blue overlay */
+}
+
+.hero-content {
+    position: relative;
+    z-index: 2;
+    width: 100%;
+    padding: 0 20px;
+}
+
+.hero-content h1 { font-size: 3.5rem; margin-bottom: 20px; }
+.highlight { color: var(--gold); }
+.hero-content p { font-size: 1.3rem; max-width: 700px; margin: 0 auto 30px; }
+
+.btn-primary {
+    background: var(--gold);
+    color: #fff;
+    padding: 15px 30px;
+    text-decoration: none;
+    border-radius: 5px;
+    font-weight: bold;
+    margin: 10px;
+    display: inline-block;
+}
+
+.btn-secondary {
+    border: 2px solid #fff;
+    color: #fff;
+    padding: 13px 30px;
+    text-decoration: none;
+    border-radius: 5px;
+    font-weight: bold;
+    margin: 10px;
+    display: inline-block;
+}
+
+/* Section Common */
+section { padding: 100px 0; }
+
+.section-title { text-align: center; margin-bottom: 50px; }
+.section-title h2 { font-size: 2.5rem; color: var(--primary-blue); }
+.underline {
+    width: 60px;
+    height: 4px;
+    background: var(--gold);
+    margin: 10px auto;
+}
+
+/* About Section */
+.about-text-content { max-width: 850px; margin: 0 auto; }
+.about-text-content p { margin-bottom: 20px; }
+
+.disclaimer-alert {
+    background: #fff5f5;
+    border-left: 5px solid #e53e3e;
+    padding: 25px;
+    margin: 40px 0;
+    font-size: 0.95rem;
+    color: #555;
+}
+
+.mission-statement {
+    text-align: center;
+    font-style: italic;
+    font-weight: 600;
+    color: var(--primary-blue);
+    font-size: 1.2rem;
+    padding-top: 20px;
+    border-top: 1px solid #eee;
+}
+
+/* Blog Preview */
+.blogs-preview { background: var(--bg-light); }
+.blog-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 30px; }
+.blog-card { background: #fff; border-radius: 8px; overflow: hidden; box-shadow: 0 5px 15px rgba(0,0,0,0.05); }
+.blog-img-placeholder { height: 200px; background: #ddd; }
+.blog-card-body { padding: 25px; }
+.text-link { color: var(--light-blue); text-decoration: none; font-weight: bold; margin-top: 10px; display: block; }
+
+/* Contact Section */
+.contact-wrapper { display: flex; justify-content: center; }
+.contact-info { width: 100%; max-width: 600px; }
+.info-item { display: flex; align-items: center; margin-bottom: 30px; background: #fff; padding: 20px; border-radius: 10px; box-shadow: 0 2px 10px rgba(0,0,0,0.05); }
+.info-icon { font-size: 2rem; margin-right: 20px; }
+.info-item h4 { color: var(--primary-blue); margin-bottom: 5px; }
+.info-item a { text-decoration: none; color: var(--text-light); }
+
+/* Footer */
+footer { background: var(--primary-blue); color: #fff; padding: 60px 0; text-align: center; }
+.footer-logo { height: 50px; filter: brightness(0) invert(1); margin-bottom: 20px; } /* Makes logo white in footer */
+.small-print { font-size: 0.8rem; margin-top: 10px; opacity: 0.6; }
+
+/* Mobile */
+@media (max-width: 768px) {
+    .nav-links { display: none; }
+    .hero-content h1 { font-size: 2.2rem; }
+    .blog-grid { grid-template-columns: 1fr; }
+}
+/* Blog Listing Specifics */
+.page-hero {
+    background: var(--primary-blue);
+    padding: 140px 0 80px;
+    text-align: center;
+    color: white;
+}
+
+.active-page {
+    color: var(--gold) !important;
+    border-bottom: 2px solid var(--gold);
+}
+
+.blog-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 40px;
+    margin-top: -40px;
+}
+
+.blog-card {
+    background: white;
+    border-radius: 12px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+    overflow: hidden;
+    transition: transform 0.3s ease;
+}
+
+.blog-card:hover { transform: translateY(-10px); }
+
+.blog-card-img {
+    height: 220px;
+    background-size: cover;
+    background-position: center;
+    position: relative;
+    padding: 15px;
+}
+
+.blog-category {
+    background: var(--gold);
+    color: white;
+    font-size: 0.75rem;
+    font-weight: 700;
+    padding: 5px 12px;
+    border-radius: 4px;
+    text-transform: uppercase;
+}
+
+.blog-card-content { padding: 25px; }
+.blog-card-content h2 { font-size: 1.4rem; color: var(--primary-blue); margin-bottom: 15px; }
+.blog-card-content p { color: var(--text-light); font-size: 0.95rem; margin-bottom: 20px; }
+
+.blog-footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-top: 1px solid #eee;
+    padding-top: 15px;
+    font-size: 0.85rem;
+    color: #999;
+}
+
+.read-btn { color: var(--light-blue); text-decoration: none; font-weight: 700; }
+
+/* Single Post Layout */
+.narrow-container { max-width: 800px; }
+.post-layout { padding: 120px 0 80px; }
+
+.breadcrumbs { font-size: 0.85rem; margin-bottom: 20px; color: #999; }
+.breadcrumbs a { color: var(--light-blue); text-decoration: none; }
+
+.post-title { font-size: 2.8rem; line-height: 1.2; color: var(--primary-blue); margin-bottom: 15px; }
+.post-meta-data { color: #888; margin-bottom: 30px; font-size: 0.9rem; }
+
+.featured-img { width: 100%; border-radius: 12px; margin-bottom: 40px; }
+
+.article-body { font-size: 1.15rem; line-height: 1.8; color: #333; }
+.article-body h2 { margin: 40px 0 20px; color: var(--primary-blue); }
+.article-body p { margin-bottom: 25px; }
+
+.insight-box {
+    background: #f0f7ff;
+    border-left: 4px solid var(--light-blue);
+    padding: 25px;
+    margin: 40px 0;
+}
+
+blockquote {
+    font-size: 1.5rem;
+    font-style: italic;
+    color: var(--primary-blue);
+    border-left: 4px solid var(--gold);
+    padding-left: 25px;
+    margin: 40px 0;
+}
+
+.author-bio {
+    display: flex;
+    align-items: center;
+    background: var(--bg-light);
+    padding: 30px;
+    border-radius: 12px;
+    margin: 60px 0;
+}
+
+.author-img {
+    width: 60px;
+    height: 60px;
+    background: var(--primary-blue);
+    color: white;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+    margin-right: 20px;
+    flex-shrink: 0;
+}
+
+.author-info h4 { margin-bottom: 5px; color: var(--primary-blue); }
+.author-info p { font-size: 0.95rem; color: var(--text-light); }
+
+@media (max-width: 768px) {
+    .post-title { font-size: 2rem; }
+    .author-bio { flex-direction: column; text-align: center; }
+    .author-img { margin-right: 0; margin-bottom: 15px; }
+}
+/* Demat Account CTA Button */
+.btn-demat {
+    background: var(--gold); /* Your theme's gold color */
+    color: #fff !important;
+    padding: 12px 24px;
+    border-radius: 5px;
+    font-weight: 700;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    display: inline-block;
+    box-shadow: 0 4px 15px rgba(197, 157, 95, 0.3);
+    font-size: 0.9rem;
+    border: none;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.btn-demat:hover {
+    background: #b08c54; /* A slightly darker gold for hover */
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(197, 157, 95, 0.5);
+}
+
+/* Adjusting the navbar for the longer button */
+.navbar {
+    max-width: 1300px; /* Widened slightly to accommodate the long text */
+}
+
+@media (max-width: 1024px) {
+    .btn-demat {
+        padding: 10px 15px;
+        font-size: 0.8rem;
+    }
+}
+
+/* Hide navigation on small mobile screens and replace with a standard menu if needed, 
+   but for now, we ensure the CTA is visible */
+@media (max-width: 768px) {
+    .nav-links {
+        display: none; /* Recommended: implement a mobile hamburger menu if traffic is mobile-heavy */
+    }
+}
+/* Ensure the header is always visible and on top */
+.main-header {
+    background: #ffffff !important; /* Ensure it's not transparent */
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 9999; /* Higher than anything else */
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+    padding: 10px 0;
+}
+
+/* Force the blog content to start AFTER the fixed header */
+.post-layout {
+    padding-top: 140px !important; /* Adjust this if the header is taller */
+    background: #fff;
+    position: relative;
+    z-index: 1;
+}
+
+/* Fix navbar spacing for the long Demat button */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1300px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.nav-links {
+    display: flex;
+    align-items: center;
+    list-style: none;
+    gap: 20px; /* Space between links */
+}
+
+.nav-links li a {
+    text-decoration: none;
+    color: var(--primary-blue);
+    font-weight: 600;
+}
+
+/* The Demat Button specific style */
+.btn-demat {
+    background: var(--gold) !important;
+    color: white !important;
+    padding: 10px 20px !important;
+    border-radius: 5px;
+    font-size: 0.85rem !important;
+    white-space: nowrap; /* Prevents text from wrapping to two lines */
+}
+
+/* Responsive adjustment for the long button */
+@media (max-width: 1100px) {
+    .nav-links {
+        gap: 10px;
+    }
+    .btn-demat {
+        font-size: 0.75rem !important;
+        padding: 8px 12px !important;
+    }
+}
