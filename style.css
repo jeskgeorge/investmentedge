@@ -529,4 +529,84 @@ blockquote {
         gap: 10px;
     }
 }
+/* Share Buttons Styling */
+.share-container {
+    margin: 40px 0;
+    padding-top: 30px;
+    border-top: 1px solid #eee;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
+}
 
+.share-label {
+    font-weight: 700;
+    color: var(--primary-blue);
+    text-transform: uppercase;
+    font-size: 0.85rem;
+    letter-spacing: 1px;
+}
+
+.share-buttons {
+    display: flex;
+    gap: 15px;
+}
+
+.share-btn {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 10px 20px;
+    border-radius: 30px;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 0.9rem;
+    transition: all 0.3s ease;
+    cursor: pointer;
+    border: 2px solid transparent;
+}
+
+/* Facebook Button (Professional Theme Blue) */
+.fb-btn {
+    background: #1877F2;
+    color: white !important;
+}
+
+.fb-btn:hover {
+    background: #133663; /* Turns to your primary brand blue */
+    transform: translateY(-2px);
+}
+
+/* Copy Link Button (Brand Gold) */
+.link-btn {
+    background: white;
+    color: var(--primary-blue);
+    border: 2px solid var(--gold);
+}
+
+.link-btn:hover {
+    background: var(--gold);
+    color: white;
+    transform: translateY(-2px);
+}
+
+.link-btn.copied {
+    background: #00c853; /* Success Green */
+    border-color: #00c853;
+    color: white;
+}
+
+.share-btn .icon {
+    font-size: 1.1rem;
+}
+
+@media (max-width: 480px) {
+    .share-buttons {
+        flex-direction: column;
+        width: 100%;
+    }
+    .share-btn {
+        justify-content: center;
+    }
+}
