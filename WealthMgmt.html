@@ -86,4 +86,44 @@ Before investing, it is always advisable to understand your risk profile and con
     </footer>
 
 </body>
+    <!-- Share Buttons Section -->
+<div class="share-container">
+    <span class="share-label">Share this insight:</span>
+    <div class="share-buttons">
+        <!-- Facebook Share -->
+        <a href="#" id="fb-share" class="share-btn fb-btn" target="_blank">
+            <span class="icon">f</span> Facebook
+        </a>
+        
+        <!-- Copy Link Button -->
+        <button id="copy-link" class="share-btn link-btn">
+            <span class="icon">🔗</span> <span id="copy-text">Copy Link</span>
+        </button>
+    </div>
+</div>
+
+<!-- Simple Script to make buttons work -->
+<script>
+    // 1. Facebook Share Logic
+    const currentUrl = window.location.href;
+    document.getElementById('fb-share').href = `https://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent(currentUrl)}`;
+
+    // 2. Copy Link Logic
+    document.getElementById('copy-link').addEventListener('click', function() {
+        navigator.clipboard.writeText(currentUrl).then(() => {
+            const btnText = document.getElementById('copy-text');
+            const originalText = btnText.innerText;
+            
+            // Show "Copied!" feedback
+            btnText.innerText = "Copied!";
+            this.classList.add('copied');
+            
+            // Revert back after 2 seconds
+            setTimeout(() => {
+                btnText.innerText = originalText;
+                this.classList.remove('copied');
+            }, 2000);
+        });
+    });
+</script>
 </html>
