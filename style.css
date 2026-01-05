@@ -219,14 +219,7 @@ footer { background: var(--primary-blue); color: #fff; padding: 60px 0; text-ali
 
 .blog-card:hover { transform: translateY(-10px); }
 
-.blog-card-img {
-    width: 50%;
-    height: 100%;
-    background-size: cover;     /* THIS PREVENTS STRETCHING */
-    background-position: top;   /* Keeps the top of the image visible */
-    background-repeat: no-repeat;
-    position: relative;
-}
+
 
 .blog-category {
     background: var(--gold);
@@ -435,10 +428,11 @@ blockquote {
 }
 /* Update this in your style.css */
 .blog-card-img {
-    width: 220px;
+    width: 100%;
     height: 220px;
     background-size: cover;     /* THIS PREVENTS STRETCHING */
     background-position: top;   /* Keeps the top of the image visible */
     background-repeat: no-repeat;
     position: relative;
+}
 }
