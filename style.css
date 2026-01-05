@@ -1,4 +1,4 @@
-:root {
+f:root {
     --primary-blue: #133663; /* Matching the logo dark blue */
     --light-blue: #4a90e2;   /* Matching the logo 'Edge' blue */
     --gold: #c59d5f;         /* Matching the logo arrow */
@@ -220,11 +220,12 @@ footer { background: var(--primary-blue); color: #fff; padding: 60px 0; text-ali
 .blog-card:hover { transform: translateY(-10px); }
 
 .blog-card-img {
+   width: 100%;
     height: 220px;
-    background-size: cover;
-    background-position: center;
-    position: relative;
-    padding: 15px;
+    background-size: cover;     /* THIS PREVENTS STRETCHING */
+    background-position: top;   /* Keeps the top of the image visible */
+    background-repeat: no-repeat;
+    position: relative
 }
 
 .blog-category {
