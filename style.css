@@ -429,7 +429,7 @@ blockquote {
 /* Update this in your style.css */
 .blog-card-img {
     width: 50%;
-    height: 50%;
+    height: 220px;
     background-size: cover;     /* THIS PREVENTS STRETCHING */
     background-position: top;   /* Keeps the top of the image visible */
     background-repeat: no-repeat;
