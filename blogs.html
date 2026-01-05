@@ -8,21 +8,18 @@
     <link rel="stylesheet" href="style.css">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
 </head>
-<body>
+<body class="blog-listing-page">
 
     <!-- Navigation -->
- <header>
+    <header class="main-header">
         <nav class="navbar">
             <div class="logo-container">
-                <a href="index.html">
-                    <img src="logo.png" alt="InvestmentEdge Logo" class="site-logo">
-                </a>
+                <a href="index.html"><img src="logo.png" alt="InvestmentEdge Logo" class="site-logo"></a>
             </div>
             <ul class="nav-links">
-                <li><a href="index.html#home">Home</a></li>
+                <li><a href="index.html">Home</a></li>
                 <li><a href="index.html#about">About Us</a></li>
-                <li><a href="blogs.html">Blogs</a></li>
-                <!-- Primary CTA Button -->
+                <li><a href="blogs.html" class="active-page">Blogs</a></li>
                 <li>
                     <a href="https://diy.sharekhan.com/app/Account/RegisterFOS?grpcd=13476&type=pb&grpid=13913&utm_empcode=PB13476USER&FormType=CDSL&CustomerType=FOS" 
                        class="btn-demat" target="_blank">
@@ -33,71 +30,64 @@
         </nav>
     </header>
 
-    <!-- Blog Hero -->
-    <section class="page-hero blog-listing-hero">
+    <!-- Page Title -->
+    <section class="page-hero">
         <div class="container">
-            <h1>Investor Awareness <span class="highlight">Blog</span></h1>
-            <p>Empowering you with the knowledge to navigate Indian markets and build long-term wealth.</p>
+            <h1>Investor <span class="highlight">Knowledge Hub</span></h1>
+            <p>Data-driven insights and market education for the disciplined investor.</p>
         </div>
     </section>
 
-    <!-- Blog Filter & Grid -->
+    <!-- Text-Only Blog Listing -->
     <section class="blog-section">
-        <div class="container">
-            <div class="blog-grid">
+        <div class="container narrow-container">
+            <div class="text-blog-list">
+                
                 <!-- Blog Card 1 -->
-                <article class="blog-card featured">
-                     <img src="compounding-thumb.png"?auto=format&fit=crop&w=1200&q=80" class="blog-preview-img" alt="Investment Growth Chart">
-                  
-                        <span class="blog-category">Mutual Funds</span>
-                    </div>
-                    <div class="blog-card-content">
-                        <h2>The Power of Compounding in Mutual Funds</h2>
-                        <p>Learn why starting your investment journey early is the most critical factor in wealth creation...</p>
-                        <div class="blog-footer">
-                            <span>5 min read</span>
-                            <a href="blog-template.html" class="read-btn">Read Article →</a>
-                        </div>
+                <article class="text-blog-card">
+                    <span class="blog-category">Mutual Funds</span>
+                    <a href="blog-template.html" class="blog-title-link">
+                        <h2>The Power of Compounding: Why Time Beats Timing</h2>
+                    </a>
+                    <p class="blog-excerpt">Explore why starting your investment journey early is the most critical factor in long-term wealth creation and how compounding works in your favor.</p>
+                    <div class="blog-meta">
+                        <span>Jan 10, 2026</span> • <span>6 min read</span>
+                        <a href="blog-template.html" class="read-more-text">Read Full Article →</a>
                     </div>
                 </article>
 
                 <!-- Blog Card 2 -->
-                <article class="blog-card">
-                    <div class="blog-card-img" style="background-image: url('https://images.unsplash.com/photo-1590283603385-17ffb3a7f29f?auto=format&fit=crop&w=800&q=80');">
-                        <span class="blog-category">Stock Market</span>
-                    </div>
-                    <div class="blog-card-content">
-                        <h2>Basics of Opening a Demat Account</h2>
-                        <p>A step-by-step guide for beginners on how to start their stock market journey safely.</p>
-                        <div class="blog-footer">
-                            <span>4 min read</span>
-                            <a href="blog-template.html" class="read-btn">Read Article →</a>
-                        </div>
+                <article class="text-blog-card">
+                    <span class="blog-category">Stock Market</span>
+                    <a href="blog-template.html" class="blog-title-link">
+                        <h2>How to Navigate Your First Demat Account</h2>
+                    </a>
+                    <p class="blog-excerpt">A beginner-friendly guide to understanding the demat system in India, opening your first account, and performing your first trade securely.</p>
+                    <div class="blog-meta">
+                        <span>Jan 05, 2026</span> • <span>4 min read</span>
+                        <a href="blog-template.html" class="read-more-text">Read Full Article →</a>
                     </div>
                 </article>
 
                 <!-- Blog Card 3 -->
-                <article class="blog-card">
-                    <div class="blog-card-img" style="background-image: url('https://images.unsplash.com/photo-1554224155-1696413575b9?auto=format&fit=crop&w=800&q=80');">
-                        <span class="blog-category">Tax Planning</span>
-                    </div>
-                    <div class="blog-card-content">
-                        <h2>Beating Inflation with Market Instruments</h2>
-                        <p>Why fixed deposits might not be enough and how to diversify your portfolio for better returns.</p>
-                        <div class="blog-footer">
-                            <span>6 min read</span>
-                            <a href="blog-template.html" class="read-btn">Read Article →</a>
-                        </div>
+                <article class="text-blog-card">
+                    <span class="blog-category">Wealth Management</span>
+                    <a href="blog-template.html" class="blog-title-link">
+                        <h2>Beat Inflation: Beyond Fixed Deposits</h2>
+                    </a>
+                    <p class="blog-excerpt">While capital protection is important, inflation eats your purchasing power. Learn how diversified market-linked instruments can help preserve your wealth.</p>
+                    <div class="blog-meta">
+                        <span>Dec 28, 2025</span> • <span>8 min read</span>
+                        <a href="blog-template.html" class="read-more-text">Read Full Article →</a>
                     </div>
                 </article>
+
             </div>
         </div>
     </section>
 
-    <!-- Footer -->
     <footer>
         <div class="container">
-            <img src="logo.png" alt="InvestmentEdge Logo" class="footer-logo">
             <p>&copy; 2026 InvestmentEdge.in. All Rights Reserved.</p>
         </div>
     </footer>
