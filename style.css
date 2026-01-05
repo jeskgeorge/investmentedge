@@ -427,3 +427,7 @@ blockquote {
     object-fit: cover; /* This prevents the image from stretching */
     display: block;
 }
+/* This adds space at the top of the blog section so the menu doesn't cover it */
+.blog-listing, .blog-section {
+    padding-top: 120px !important; 
+}
