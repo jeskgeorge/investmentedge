@@ -610,3 +610,118 @@ blockquote {
         justify-content: center;
     }
 }
+/* Multi-Column Footer Styling */
+.site-footer {
+    background: #0a1f3d; /* Deeper professional blue */
+    color: #e0e0e0;
+    padding: 80px 0 0;
+    font-size: 0.95rem;
+}
+
+.footer-grid {
+    display: grid;
+    grid-template-columns: 1.5fr 1fr 1.5fr; /* Different widths for columns */
+    gap: 50px;
+    padding-bottom: 50px;
+}
+
+.footer-col h4 {
+    color: white;
+    margin-bottom: 25px;
+    font-size: 1.1rem;
+    position: relative;
+}
+
+.footer-col h4::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: -8px;
+    width: 30px;
+    height: 2px;
+    background: var(--gold);
+}
+
+.footer-logo {
+    height: 50px;
+    margin-bottom: 20px;
+    filter: brightness(0) invert(1); /* Makes logo white */
+}
+
+.footer-contact-info p {
+    margin-top: 10px;
+    color: var(--gold);
+    font-weight: 600;
+}
+
+/* Links List */
+.links-col ul {
+    list-style: none;
+}
+
+.links-col li {
+    margin-bottom: 12px;
+}
+
+.links-col a {
+    color: #b0c4de;
+    text-decoration: none;
+    transition: 0.3s;
+}
+
+.links-col a:hover {
+    color: var(--gold);
+    padding-left: 5px;
+}
+
+/* Map Section */
+.map-container {
+    border-radius: 8px;
+    overflow: hidden;
+    margin-bottom: 15px;
+    border: 1px solid rgba(255,255,255,0.1);
+}
+
+.gmb-link {
+    display: inline-block;
+    color: var(--gold);
+    text-decoration: none;
+    font-weight: 700;
+    font-size: 0.85rem;
+    border: 1px solid var(--gold);
+    padding: 8px 15px;
+    border-radius: 4px;
+    transition: 0.3s;
+}
+
+.gmb-link:hover {
+    background: var(--gold);
+    color: white;
+}
+
+/* Bottom Bar */
+.footer-bottom {
+    background: #07162b;
+    padding: 25px 0;
+    text-align: center;
+    border-top: 1px solid rgba(255,255,255,0.05);
+}
+
+.footer-bottom p {
+    font-size: 0.8rem;
+    opacity: 0.7;
+}
+
+/* Responsive Footer */
+@media (max-width: 900px) {
+    .footer-grid {
+        grid-template-columns: 1fr;
+        gap: 40px;
+        text-align: center;
+    }
+    
+    .footer-col h4::after {
+        left: 50%;
+        transform: translateX(-50%);
+    }
+}
