@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Investment Calculators | InvestmentEdge.in</title>
+    <link rel="icon" type="image/png" href="logo.png">
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+</head>
+<body class="calculator-page">
+
+    <!-- Navigation -->
+    <header class="main-header">
+        <nav class="navbar">
+            <div class="logo-container">
+                <a href="index.html"><img src="logo.png" alt="InvestmentEdge Logo" class="site-logo"></a>
+            </div>
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="blogs.html">Blogs</a></li>
+                <li><a href="sip-calculator.html" class="active-page">Calculators</a></li>
+                <li><a href="https://diy.sharekhan.com/app/Account/RegisterFOS?grpcd=13476&type=pb&grpid=13913&utm_empcode=PB13476USER&FormType=CDSL&CustomerType=FOS" class="btn-demat" target="_blank">Start Demat</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main class="calc-container">
+        <section class="page-hero">
+            <div class="container">
+                <h1>Investment <span class="highlight">Calculators</span></h1>
+                <p>Plan your wealth creation and monthly income with precision.</p>
+            </div>
+        </section>
+
+        <section class="calculator-section">
+            <div class="container">
+                <!-- Tab Switching Header -->
+                <div class="calc-tabs">
+                    <button class="tab-btn active" onclick="openCalc(event, 'sip-calc')">SIP Calculator</button>
+                    <button class="tab-btn" onclick="openCalc(event, 'swp-calc')">SWP Calculator</button>
+                </div>
+
+                <!-- SIP CALCULATOR -->
+                <div id="sip-calc" class="tab-content active">
+                    <div class="calc-wrapper">
+                        <div class="calc-inputs">
+                            <div class="input-group">
+                                <label>Monthly Investment (₹)</label>
+                                <input type="number" id="sipAmount" value="5000">
+                                <input type="range" min="500" max="100000" step="500" value="5000" class="slider" id="sipSlider">
+                            </div>
+                            <div class="input-group">
+                                <label>Expected Return Rate (% p.a)</label>
+                                <input type="number" id="sipRate" value="12">
+                                <input type="range" min="1" max="30" step="0.5" value="12" class="slider" id="sipRateSlider">
+                            </div>
+                            <div class="input-group">
+                                <label>Time Period (Years)</label>
+                                <input type="number" id="sipYears" value="10">
+                                <input type="range" min="1" max="40" value="10" class="slider" id="sipYearSlider">
+                            </div>
+                        </div>
+                        <div class="calc-results">
+                            <div class="result-item"><span>Invested Amount</span><h3 id="sipTotalInvested">₹ 0</h3></div>
+                            <div class="result-item"><span>Est. Returns</span><h3 id="sipEstReturns">₹ 0</h3></div>
+                            <div class="result-item total"><span>Total Value</span><h3 id="sipTotalValue" style="color: var(--gold);">₹ 0</h3></div>
+                            <a href="https://wa.me/918921722647?text=I%20want%20to%20start%20an%20SIP" class="btn-whatsapp" style="display:block; text-align:center;">Start SIP Now</a>
+                        </div>
+                    </div>
+                </div>
+
+               <!-- SWP CALCULATOR -->
+<div id="swp-calc" class="tab-content">
+    <div class="calc-wrapper">
+        <div class="calc-inputs">
+            <div class="input-group">
+                <label>Total Investment (₹)</label>
+                <input type="number" id="swpTotal" value="500000">
+                <input type="range" min="10000" max="10000000" step="10000" value="500000" class="slider" id="swpTotalSlider">
+            </div>
+            <div class="input-group">
+                <label>Monthly Withdrawal (₹)</label>
+                <input type="number" id="swpWithdrawal" value="5000">
+                <input type="range" min="500" max="100000" step="500" value="5000" class="slider" id="swpWithdrawalSlider">
+            </div>
+            <div class="input-group">
+                <label>Expected Return Rate (% p.a)</label>
+                <input type="number" id="swpRate" value="8">
+                <input type="range" min="1" max="30" step="0.5" value="8" class="slider" id="swpRateSlider">
+            </div>
+            <div class="input-group">
+                <label>Time Period (Years)</label>
+                <input type="number" id="swpYears" value="10">
+                <input type="range" min="1" max="40" value="10" class="slider" id="swpYearSlider">
+            </div>
+        </div>
+        
+        <div class="calc-results" style="background-color: #1a2a44;">
+            <div class="result-item">
+                <span>Total Invested Amount</span>
+                <h3 id="swpInitialInvested">₹ 5,00,000</h3>
+            </div>
+            <div class="result-item">
+                <span>Total Withdrawal</span>
+                <h3 id="swpTotalWithdrawal">₹ 0</h3>
+            </div>
+            <div class="result-item total">
+                <span>Final Value (Estimated)</span>
+                <h3 id="swpFinalBalance" style="color: var(--gold);">₹ 0</h3>
+            </div>
+            <p style="font-size: 0.75rem; opacity: 0.7; margin: 15px 0;">SWP allows you to withdraw a fixed amount regularly while the rest of the corpus stays invested.</p>
+            <a href="https://wa.me/918921722647?text=I%20want%20to%20plan%20a%20Monthly%20Income%20via%20SWP" class="btn-whatsapp" style="display:block; text-align:center;">Plan My Monthly Income</a>
+        </div>
+    </div>
+</div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container"><p>&copy; 2026 InvestmentEdge.in. <br><small>Market-linked investments are subject to risks.</small></p></div>
+    </footer>
+
+    <script>
+        // Tab Logic
+        function openCalc(evt, calcName) {
+            var i, tabcontent, tablinks;
+            tabcontent = document.getElementsByClassName("tab-content");
+            for (i = 0; i < tabcontent.length; i++) { tabcontent[i].style.display = "none"; }
+            tablinks = document.getElementsByClassName("tab-btn");
+            for (i = 0; i < tablinks.length; i++) { tablinks[i].className = tablinks[i].className.replace(" active", ""); }
+            document.getElementById(calcName).style.display = "block";
+            evt.currentTarget.className += " active";
+        }
+
+        function calculateSIP() {
+    let P = parseFloat(document.getElementById('sipAmount').value);
+    let annualRate = parseFloat(document.getElementById('sipRate').value) / 100;
+    let n = parseFloat(document.getElementById('sipYears').value) * 12;
+
+    // Use monthly division for SIP as it's the standard for SIP industry
+    let r = annualRate / 12; 
+
+    let totalValue = P * ((Math.pow(1 + r, n) - 1) / r) * (1 + r);
+    let invested = P * n;
+    
+    document.getElementById('sipTotalInvested').innerText = "₹ " + Math.round(invested).toLocaleString('en-IN');
+    document.getElementById('sipEstReturns').innerText = "₹ " + Math.round(totalValue - invested).toLocaleString('en-IN');
+    document.getElementById('sipTotalValue').innerText = "₹ " + Math.round(totalValue).toLocaleString('en-IN');
+}
+
+      // --- Corrected SWP Calculation Logic (CAGR/Industry Standard) ---
+function calculateSWP() {
+    // Inputs
+    let P = parseFloat(document.getElementById('swpTotal').value);      // Principal
+    let W = parseFloat(document.getElementById('swpWithdrawal').value); // Monthly Withdrawal
+    let annualRate = parseFloat(document.getElementById('swpRate').value) / 100;
+    let t = parseFloat(document.getElementById('swpYears').value);      // Years
+    let n = t * 12;                                                    // Total months
+
+    // 1. Calculate Monthly Interest Rate using CAGR logic 
+    // This is the "Industry Standard" for Indian MF calculators
+    let r = Math.pow(1 + annualRate, 1/12) - 1;
+
+    // 2. SWP Formula for Future Value (Withdrawal at end of month)
+    // FV = P(1+r)^n - W[((1+r)^n - 1)/r]
+    let powTerm = Math.pow(1 + r, n);
+    let futureValue = P * powTerm - W * ((powTerm - 1) / r);
+    
+    // 3. Total amount taken out
+    let totalWithdrawal = W * n;
+    
+    // 4. Update UI
+    document.getElementById('swpInitialInvested').innerText = "₹ " + P.toLocaleString('en-IN');
+    document.getElementById('swpTotalWithdrawal').innerText = "₹ " + Math.round(totalWithdrawal).toLocaleString('en-IN');
+    
+    if (futureValue > 0) {
+        document.getElementById('swpFinalBalance').innerText = "₹ " + Math.round(futureValue).toLocaleString('en-IN');
+        document.getElementById('swpFinalBalance').style.color = "var(--gold)";
+    } else {
+        document.getElementById('swpFinalBalance').innerText = "₹ 0 (Corpus Exhausted)";
+        document.getElementById('swpFinalBalance').style.color = "#ff4d4d";
+    }
+}
+
+        // Sync Helper
+        function setupSync(inputId, sliderId, calcFunc) {
+            const input = document.getElementById(inputId);
+            const slider = document.getElementById(sliderId);
+            input.addEventListener('input', () => { slider.value = input.value; calcFunc(); });
+            slider.addEventListener('input', () => { input.value = slider.value; calcFunc(); });
+        }
+
+        setupSync('sipAmount', 'sipSlider', calculateSIP);
+        setupSync('sipRate', 'sipRateSlider', calculateSIP);
+        setupSync('sipYears', 'sipYearSlider', calculateSIP);
+        
+        setupSync('swpTotal', 'swpTotalSlider', calculateSWP);
+        setupSync('swpWithdrawal', 'swpWithdrawalSlider', calculateSWP);
+        setupSync('swpRate', 'swpRateSlider', calculateSWP);
+        setupSync('swpYears', 'swpYearSlider', calculateSWP);
+
+        // Initial Calculations
+        calculateSIP();
+        calculateSWP();
+    </script>
+</body>
+</html>
