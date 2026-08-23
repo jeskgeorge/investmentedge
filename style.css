@@ -1005,3 +1005,76 @@ blockquote {
     font-weight: 700;
     margin-top: 15px;
 }
+/* Calculator Specific Styles */
+.calc-wrapper {
+    display: grid;
+    grid-template-columns: 1.2fr 0.8fr;
+    gap: 40px;
+    background: white;
+    padding: 40px;
+    border-radius: 15px;
+    box-shadow: 0 15px 50px rgba(0,0,0,0.1);
+    margin-top: -60px; /* Overlap with hero */
+}
+
+.input-group {
+    margin-bottom: 30px;
+}
+
+.input-group label {
+    display: block;
+    font-weight: 600;
+    margin-bottom: 10px;
+    color: var(--primary-blue);
+}
+
+.input-group input[type="number"] {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    font-size: 1.1rem;
+    font-weight: 700;
+    color: var(--primary-blue);
+}
+
+.slider {
+    width: 100%;
+    margin-top: 15px;
+    cursor: pointer;
+    accent-color: var(--gold);
+}
+
+.calc-results {
+    background: var(--primary-blue);
+    padding: 30px;
+    border-radius: 10px;
+    color: white;
+}
+
+.result-item {
+    margin-bottom: 20px;
+    border-bottom: 1px solid rgba(255,255,255,0.1);
+    padding-bottom: 15px;
+}
+
+.result-item span {
+    font-size: 0.9rem;
+    opacity: 0.8;
+}
+
+.result-item h3 {
+    font-size: 1.5rem;
+    margin-top: 5px;
+}
+
+.result-item.total {
+    border-bottom: none;
+}
+
+@media (max-width: 768px) {
+    .calc-wrapper {
+        grid-template-columns: 1fr;
+        padding: 20px;
+    }
+}
