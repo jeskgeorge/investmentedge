@@ -1131,3 +1131,89 @@ blockquote {
     font-weight: 700;
     margin-top: 15px;
 }
+/* --- Standout Calculator CTA Section --- */
+.standout-cta {
+    padding: 60px 0;
+    background: #f0f4f8; /* Light contrast background */
+}
+
+.cta-box {
+    background: var(--primary-blue);
+    padding: 50px;
+    border-radius: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0 20px 40px rgba(19, 54, 99, 0.2);
+    border: 2px solid var(--gold);
+}
+
+.cta-text h2 {
+    color: white;
+    text-align: left;
+    margin-bottom: 10px;
+    font-size: 2.2rem;
+}
+
+.cta-text p {
+    color: #b0c4de;
+    font-size: 1.1rem;
+}
+
+/* The Pulsing Gold Button */
+.btn-pulse-gold {
+    background: var(--gold);
+    color: white !important;
+    padding: 18px 35px;
+    border-radius: 50px;
+    font-weight: 800;
+    text-transform: uppercase;
+    text-decoration: none;
+    font-size: 1.1rem;
+    display: inline-block;
+    box-shadow: 0 0 0 0 rgba(197, 157, 95, 0.7);
+    animation: pulse-gold 2s infinite;
+    transition: 0.3s;
+}
+
+.btn-pulse-gold:hover {
+    transform: scale(1.05);
+    background: #b08c54;
+}
+
+/* Pulse Animation Logic */
+@keyframes pulse-gold {
+    0% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(197, 157, 95, 0.7); }
+    70% { transform: scale(1); box-shadow: 0 0 0 20px rgba(197, 157, 95, 0); }
+    100% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(197, 157, 95, 0); }
+}
+
+/* Hero Calculator Button Specific Style */
+.btn-hero-calc {
+    background: transparent;
+    color: var(--gold);
+    border: 2px solid var(--gold);
+    padding: 13px 30px;
+    text-decoration: none;
+    border-radius: 5px;
+    font-weight: 700;
+    margin-left: 10px;
+    transition: 0.3s;
+}
+
+.btn-hero-calc:hover {
+    background: var(--gold);
+    color: white;
+}
+
+/* Mobile Responsive Fixes */
+@media (max-width: 900px) {
+    .cta-box {
+        flex-direction: column;
+        text-align: center;
+        padding: 30px;
+    }
+    .cta-text h2 { text-align: center; font-size: 1.8rem; }
+    .cta-button-area { margin-top: 30px; }
+    .btn-hero-calc { margin-left: 0; margin-top: 15px; display: inline-block; }
+}
