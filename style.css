@@ -78,53 +78,97 @@ header {
 /* Hero */
 .hero {
     height: 100vh;
+    min-height: 600px;
     background: url('https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=1350&q=80');
     background-size: cover;
     background-position: center;
     display: flex;
     align-items: center;
-    position: relative;
-    color: #fff;
-    text-align: center;
+    justify-content: center;
+    position: relative; /* Required for z-index to work */
+    overflow: hidden;
 }
 
 .hero-overlay {
     position: absolute;
-    top: 0; left: 0; width: 100%; height: 100%;
-    background: rgba(19, 54, 99, 0.85); /* Deep blue overlay */
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(19, 54, 99, 0.85); /* Dark Blue Overlay */
+    z-index: 1; /* Lowest layer */
 }
 
 .hero-content {
     position: relative;
-    z-index: 2;
-    width: 100%;
+    z-index: 10; /* Higher than overlay */
+    text-align: center;
+    color: white;
     padding: 0 20px;
+    width: 100%;
+    max-width: 900px;
 }
 
-.hero-content h1 { font-size: 3.5rem; margin-bottom: 20px; }
-.highlight { color: var(--gold); }
-.hero-content p { font-size: 1.3rem; max-width: 700px; margin: 0 auto 30px; }
+/* Button Container */
+.hero-btns {
+    margin-top: 35px;
+    display: flex;
+    justify-content: center;
+    gap: 20px; /* Modern spacing */
+    position: relative;
+    z-index: 20; /* Highest layer */
+}
 
+/* Base Button Styles */
 .btn-primary {
     background: var(--gold);
-    color: #fff;
+    color: white !important;
     padding: 15px 30px;
     text-decoration: none;
     border-radius: 5px;
-    font-weight: bold;
-    margin: 10px;
+    font-weight: 700;
     display: inline-block;
+    transition: 0.3s ease;
+    border: 2px solid var(--gold);
 }
 
-.btn-secondary {
-    border: 2px solid #fff;
-    color: #fff;
-    padding: 13px 30px;
+.btn-primary:hover {
+    background: #b08c54;
+    border-color: #b08c54;
+    transform: translateY(-3px);
+}
+
+.btn-hero-calc {
+    background: transparent;
+    color: white !important;
+    border: 2px solid white;
+    padding: 15px 30px;
     text-decoration: none;
     border-radius: 5px;
-    font-weight: bold;
-    margin: 10px;
+    font-weight: 700;
     display: inline-block;
+    transition: 0.3s ease;
+}
+
+.btn-hero-calc:hover {
+    background: white;
+    color: var(--primary-blue) !important;
+    transform: translateY(-3px);
+}
+
+/* Responsive Fix for Mobile */
+@media (max-width: 768px) {
+    .hero-btns {
+        flex-direction: column;
+        align-items: center;
+        gap: 15px;
+    }
+    .btn-primary, .btn-hero-calc {
+        width: 80%; /* Wider buttons on mobile */
+    }
+    .hero-content h1 {
+        font-size: 2.2rem;
+    }
 }
 
 /* Section Common */
